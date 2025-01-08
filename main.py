@@ -64,8 +64,6 @@ async def gemini_session_handler(client_websocket: websockets.WebSocketServerPro
                               for chunk in data["realtime_input"]["media_chunks"]:
                                   if chunk["mime_type"] == "audio/pcm":
                                       await session.send({"mime_type": "audio/pcm", "data": chunk["data"]})
-                                  elif chunk["mime_type"] == "text/plain":
-                                    await session.send({"mime_type": "text/plain", "data": chunk["data"]}) 
                                   elif chunk["mime_type"] == "image/jpeg":
                                       await session.send({"mime_type": "image/jpeg", "data": chunk["data"]})
                                       
@@ -163,10 +161,15 @@ async def restart_server():
 ######################################  Function To Restart the process ##############################################
 
 
+
+
+
+### EDIT THIS IF NEEDED ###
+### ONLY FOR CHANGING WEBSOCKET CONNECTION DETAILS ###
         
 async def main() -> None:
     async with websockets.serve(gemini_session_handler, "localhost", 9083):
-        print("Running websocket server localhost:9083...")
+        print("Running websocket server ")
         await asyncio.Future()  # Keep the server running indefinitely
 
 
