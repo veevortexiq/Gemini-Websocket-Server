@@ -4,7 +4,7 @@ This Python application implements a WebSocket server that interfaces with Googl
 enabling real-time communication between clients and the Gemini model for screen sharing assistance.
 
 ## Prerequisites
-**Python** < 3.9
+**Python** > 3.9
 
 **Required packages**: websockets google-genai python-dotenv
 
