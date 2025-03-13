@@ -16,6 +16,7 @@ pip install websockets google-genai python-dotenv
 1. Modify  .env file with your Google API key:
 ```
 GOOGLE_API_KEY=your_api_key_here
+GOOGLE_APPLICATION_CREDENTIALS="<PATH TO CREDENTIALS>"
 ```
 2. The server runs on:
  ```
